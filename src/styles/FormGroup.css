@@ -1,0 +1,31 @@
+
+form .col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+form .form-btns-container {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.form-group {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 1rem;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    color: var(--ds-text-subtlest);
+}
+
+.form-group input {
+    padding: 0.7rem;
+    color: var(--ds-text);
+    background-color: var(--ds-background-input);
+    border: 1px solid var(--ds-border-input);
+    border-radius: 5px;
+}
