@@ -52,7 +52,9 @@ function ExperienceForm({formDetails, saveCallback, handleToggleForm}) {
             <div className='form-btns-container'>
                 <button className="btn" onClick={handleToggleForm}>Close</button>
                 <button className="btn" onClick={handleClearForm}>Clear</button>
-                <button className="btn" onClick={(event) => saveCallback(event, formState)}>Save</button>
+                <button className="btn" onClick={(event) => {
+                    handleToggleForm();
+                    saveCallback(event, formState)}}>Save</button>
             </div>
         </form>
     )

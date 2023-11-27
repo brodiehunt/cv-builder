@@ -67,6 +67,16 @@ function App() {
     setEducation(otherItems);
   }
 
+  function handleDeleteEducation(data) {
+    const otherItems = education.filter((item) => item.id !== data.id);
+    setEducation(otherItems);
+  }
+
+  function handleDeleteExperience(data) {
+    const otherItems = education.filter((item) => item.id !== data.id);
+    setExperience(otherItems);
+  }
+
 
   return (
     
@@ -81,9 +91,11 @@ function App() {
         experience={experience}
         handleUpdateExperience={handleUpdateExperience}
         handleSaveNewExperience={handleSaveNewExperience}
+        handleDeleteExperience={handleDeleteExperience}
         education={education}
         handleUpdateEducation={handleUpdateEducation}
         handleSaveNewEducation={handleSaveNewEducation}
+        handleDeleteEducation={handleDeleteEducation}
       />
       <Page details={personDetails}/>
     </div>

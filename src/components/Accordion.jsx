@@ -34,12 +34,14 @@ function Accordion(props) {
                 educationData={props.education}
                 handleUpdateEducation={props.handleUpdateEducation}
                 handleSaveNewEducation={props.handleSaveNewEducation}
+                handleDeleteEducation={props.handleDeleteEducation}
             />
             <Experience isOpen={openAccordion.experience}
                 handleChangeAccordion={handleChangeAccordion}
                 experienceData={props.experience} 
                 handleUpdateExperience={props.handleUpdateExperience}
                 handleSaveNewExperience={props.handleSaveNewExperience}
+                handleDeleteExperience={props.handleDeleteExperience}
             />
         </div>
     )

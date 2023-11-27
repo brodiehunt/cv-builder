@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import EducationForm from './EducationForm';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
-
-function Education({educationData, handleSaveNewEducation, handleUpdateEducation, isOpen, handleChangeAccordion}) {
+function Education({educationData, handleSaveNewEducation, handleUpdateEducation, isOpen, handleChangeAccordion, handleDeleteEducation}) {
     
     const [formOpen, setFormOpen] = useState(false);
     const [currentFormVals, setCurrentFormVals] = useState({school: '', degree: '', start: '', end: '', location: ''});
@@ -28,8 +28,11 @@ function Education({educationData, handleSaveNewEducation, handleUpdateEducation
 
     const educationDivs = educationData.map((item) => {
         return (
-            <div key={item.id} onClick={() => handleUpdateFormOpen(item)}>
+            <div className="existing-object-tab" key={item.id} onClick={() => handleUpdateFormOpen(item)}>
                 <p>{item.degree}</p>
+                <DeleteOutlineIcon className="delete-icon" onClick={(event) => {
+                    event.stopPropagation();
+                    handleDeleteEducation(item)}}/>
             </div>
         )
     })

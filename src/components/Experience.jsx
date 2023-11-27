@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import ExperienceForm from './ExperienceForm';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
-
-function Experience({experienceData, handleSaveNewExperience, handleUpdateExperience, isOpen, handleChangeAccordion}) {
+function Experience({experienceData, handleSaveNewExperience, handleUpdateExperience, isOpen, handleChangeAccordion, handleDeleteExperience}) {
     const [formOpen, setFormOpen] = useState(false);
     const  [currentFormVals, setCurrentFormVals] = useState({companyName: '', positionTitle: '', start: '', end: '', location: '', description: ''});
     const [newForm, setNewForm] = useState(true);
@@ -31,8 +31,12 @@ function Experience({experienceData, handleSaveNewExperience, handleUpdateExperi
     // opens a form that is prefilled for editing.
     const experienceDivs = experienceData.map((item) => {
         return (
-            <div key={item.id} onClick={() => handleUpdateFormOpen(item)}>
+            <div className="existing-object-tab" key={item.id} onClick={() => handleUpdateFormOpen(item)}>
                 <p>{item.positionTitle}</p>
+                <DeleteOutlineIcon className="delete-icon" onClick={(event) => {
+                    event.stopPropagation();
+                    handleDeleteExperience(item)}}
+                />
             </div>
         )
     })

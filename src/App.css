@@ -100,9 +100,27 @@
   max-height: 500px;
 }
 
-.yoo {
-  color: var(--ds-text);
+.accordion-content .existing-object-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  background-color: var(--ds-background-neutral-hovered);
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+.accordion-content .delete-icon {
+  color: red;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.accordion-content .delete-icon:hover {
+  transform: scale(1.2);
+}
+
 
 /* DESIGN ACCORDION COMPONENT */
 .design-group {
