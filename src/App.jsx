@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import Button from '@mui/material/Button';
 import Accordion from './components/Accordion';
 import Page from './components/Page';
@@ -15,6 +16,28 @@ function App() {
     
     setPersonDetails(details);
   }
+
+  function handleSaveNewExperience(event, data) {
+    event.preventDefault()
+    const id = uuidv4();
+    data.id = id;
+    const newState = experience.slice()
+    newState.push(data);
+    setExperience(newState);
+  }
+
+  function handleUpdateExperience(event, data) {
+    event.preventDefault()
+    // filter the current list
+    const otherItems = experience.filter((item) => item.id !== data.id);
+    if (data.companyName == '' && data.positionTitle === "" && data.location === "" && data.description === "") {
+      return setExperience(otherItems);
+    }
+    otherItems.push(data);
+    setExperience(otherItems);
+  }
+
+
   return (
     
     <div className="main-container">
@@ -25,6 +48,9 @@ function App() {
       <Accordion 
         formDetails={personDetails}
         handleSaveDetails={handleSaveDetails}
+        experience={experience}
+        handleUpdateExperience={handleUpdateExperience}
+        handleSaveNewExperience={handleSaveNewExperience}
       />
       <Page details={personDetails}/>
     </div>

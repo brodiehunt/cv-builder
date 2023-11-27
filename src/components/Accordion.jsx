@@ -10,7 +10,10 @@ function Accordion(props) {
             <Design />
             <Details formDetails={props.formDetails} handleSaveDetails={props.handleSaveDetails}/>
             <Education />
-            <Experience />
+            <Experience experienceData={props.experience} 
+            handleUpdateExperience={props.handleUpdateExperience}
+            handleSaveNewExperience={props.handleSaveNewExperience}
+            />
         </div>
     )
 }
