@@ -11,6 +11,14 @@ function App() {
   const [education, setEducation] = useState([]);
   const [experience, setExperience] = useState([]);
 
+  // Clear entire application
+  function clearResume() {
+    setDesign({layout: 'One', theme: 'One', typography: 'One'});
+    setPersonDetails({fullName: '', email: '', phone: '', address: ''})
+    setEducation([]);
+    setExperience([]);
+  }
+
   // Save new personDetails form event handler
   function handleSaveDetails(event, details) {
     event.preventDefault();
@@ -64,7 +72,7 @@ function App() {
     
     <div className="main-container">
       <div className="fixed-div">
-        <button className="btn">Clear resume</button>
+        <button className="btn" onClick={clearResume}>Clear resume</button>
         <button className="btn">Download</button>
       </div>
       <Accordion 
