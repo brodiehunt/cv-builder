@@ -1,30 +1,53 @@
+import {useState} from 'react';
 import FormGroup from './FormGroup';
 import './../styles/FormGroup.css'
 
-function EducationForm() {
+function EducationForm({formDetails, saveCallback, handleToggleForm}) {
+
+    const [formState, setFormState] = useState(formDetails);
+
+    function handleClearForm(event) {
+        event.preventDefault();
+        if (formState.id) {
+            return setFormState({school: '', degree: '', start: '', end: '', location: '', id: formState.id});
+        }
+        setFormState({school: '', degree: '', start: '', end: '', location: ''});
+    }
+
+    function handleOnChange(event) {
+        const inputName = event.target.name;
+        const inputVal = event.target.value;
+        setFormState(() => ({...formState, [inputName]: inputVal}));
+    }
 
     return (
         <form>
             <FormGroup className="input" name="school" type="text"
-            value="" id="school" placeholder="" label="School"
+            value={formState.school} id="school" placeholder="" label="School"
+            handleOnChange={handleOnChange}
             />
             <FormGroup className="input" name="degree" type="text"
-            value="" id="degree" placeholder="" label="Degree"
+            value={formState.degree} id="degree" placeholder="" label="Degree"
+            handleOnChange={handleOnChange}
             />
-            <div class="col">
+            <div className="col">
                 <FormGroup className="input" name="start" type="date"
-                value="" id="date-start" placeholder="" label="Start Date"
+                value={formState.start} id="date-start" placeholder="" label="Start Date"
+                handleOnChange={handleOnChange}
                 />
                 <FormGroup className="input" name="end" type="date"
-                value="" id="date-end" placeholder="" label="Start Date"
+                value={formState.end} id="date-end" placeholder="" label="End Date"
+                handleOnChange={handleOnChange}
                 />
             </div>
             <FormGroup className="input" name="location" type="text"
-            value="" id="location" placeholder="" label="Location"
+            value={formState.location} id="location" placeholder="" label="Location"
+            handleOnChange={handleOnChange}
             />
             <div className='form-btns-container'>
-                <button className="btn">Clear</button>
-                <button className="btn">Save</button>
+                <button className="btn" onClick={handleToggleForm}>Close</button>
+                <button className="btn" onClick={handleClearForm}>Clear</button>
+                <button className="btn" onClick={(event) => saveCallback(event, formState)}>Save</button>
             </div>
         </form>
     )

@@ -5,12 +5,12 @@ import './../styles/FormGroup.css';
 function ExperienceForm({formDetails, saveCallback, handleToggleForm}) {
     
     const [formState, setFormState] = useState(formDetails);
-    console.log(formState)
 
+    // Clears the form - if its an existing object, make sure to keep its id in the state object
     function handleClearForm(event) {
         event.preventDefault();
         if (formState.id) {
-            setFormState({companyName: '', positionTitle: '', start: '', end: '', location: '', description: '', id: formState.id});
+            return setFormState({companyName: '', positionTitle: '', start: '', end: '', location: '', description: '', id: formState.id});
         }
         setFormState({companyName: '', positionTitle: '', start: '', end: '', location: '', description: ''});
     }

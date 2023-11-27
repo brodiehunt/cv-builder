@@ -2,17 +2,13 @@ import {useState} from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import template1 from '../assets/template1.jpeg';
 import template2 from '../assets/template2.jpeg';
-function Design() {
-    const [isOpen, setIsOpen] = useState(true);
-
-    function handleToggleOpen() {
-        setIsOpen(!isOpen);
-    }
+function Design({isOpen, handleChangeAccordion}) {
+     
     return (
         <div className="design item-container">
             <div className="header-container">
                 <h2>Design</h2>
-                <ExpandMoreIcon fontSize="large" onClick={handleToggleOpen} className={isOpen ? 'accordion-icon open' : 'accordion-icon'}/>
+                <ExpandMoreIcon fontSize="large" onClick={() => handleChangeAccordion(isOpen, 'design')} className={isOpen ? 'accordion-icon open' : 'accordion-icon'}/>
             </div>
             <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
                 <div className="design-group">

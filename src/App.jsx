@@ -11,12 +11,14 @@ function App() {
   const [education, setEducation] = useState([]);
   const [experience, setExperience] = useState([]);
 
+  // Save new personDetails form event handler
   function handleSaveDetails(event, details) {
     event.preventDefault();
     
     setPersonDetails(details);
   }
 
+  // New experience save - adds a completely new object
   function handleSaveNewExperience(event, data) {
     event.preventDefault()
     const id = uuidv4();
@@ -26,6 +28,7 @@ function App() {
     setExperience(newState);
   }
 
+  // Update existing experience object - If lacking in data, deletes the object
   function handleUpdateExperience(event, data) {
     event.preventDefault()
     // filter the current list
@@ -35,6 +38,25 @@ function App() {
     }
     otherItems.push(data);
     setExperience(otherItems);
+  }
+
+  function handleSaveNewEducation(event, data) {
+    event.preventDefault();
+    const id = uuidv4();
+    data.id = id;
+    const newState = education.slice();
+    newState.push(data);
+    setEducation(newState);
+  }
+
+  function handleUpdateEducation(event, data) {
+    event.preventDefault();
+    const otherItems = education.filter((item) => item.id !== data.id);
+    if (data.degree === '' && data.school === "") {
+      return setEducation(otherItems);
+    }
+    otherItems.push(data);
+    setEducation(otherItems);
   }
 
 
@@ -51,6 +73,9 @@ function App() {
         experience={experience}
         handleUpdateExperience={handleUpdateExperience}
         handleSaveNewExperience={handleSaveNewExperience}
+        education={education}
+        handleUpdateEducation={handleUpdateEducation}
+        handleSaveNewEducation={handleSaveNewEducation}
       />
       <Page details={personDetails}/>
     </div>

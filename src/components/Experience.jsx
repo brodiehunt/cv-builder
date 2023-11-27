@@ -3,31 +3,32 @@ import ExperienceForm from './ExperienceForm';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
-function Experience({experienceData, handleSaveNewExperience, handleUpdateExperience}) {
-    const [isOpen, setIsOpen] = useState(false);
+function Experience({experienceData, handleSaveNewExperience, handleUpdateExperience, isOpen, handleChangeAccordion}) {
     const [formOpen, setFormOpen] = useState(false);
     const  [currentFormVals, setCurrentFormVals] = useState({companyName: '', positionTitle: '', start: '', end: '', location: '', description: ''});
     const [newForm, setNewForm] = useState(true);
-    
-    function handleToggleOpen() {
-        setIsOpen(!isOpen);
-    }
+   
+    // toggles the form within the content of the accordion
     function handleToggleForm() {
         setFormOpen(!formOpen)
     };
 
+    // Need to set set of current form vals to default if user wants to create new experience object
     function handleNewFormOpen() {
         setCurrentFormVals({companyName: '', positionTitle: '', start: '', end: '', location: '', description: ''});
         setNewForm(true)
         setFormOpen(true);
     }
 
+    // Takes values passed to it (in the map method below this)
     function handleUpdateFormOpen(vals) {
         setCurrentFormVals(vals);
         setNewForm(false)
         setFormOpen(true)
     }
-    console.log(experienceData)
+
+    // map through experienceData which is just the state passed from App.jsx and create a clickable div
+    // opens a form that is prefilled for editing.
     const experienceDivs = experienceData.map((item) => {
         return (
             <div key={item.id} onClick={() => handleUpdateFormOpen(item)}>
@@ -35,11 +36,12 @@ function Experience({experienceData, handleSaveNewExperience, handleUpdateExperi
             </div>
         )
     })
+    
     return (
         <div className="experience item-container">
             <div className="header-container">
                 <h2>Experience</h2>
-                <ExpandMoreIcon fontSize="large" onClick={handleToggleOpen} className={isOpen ? 'accordion-icon open' : 'accordion-icon'}/>
+                <ExpandMoreIcon fontSize="large" onClick={() => handleChangeAccordion(isOpen, 'experience')} className={isOpen ? 'accordion-icon open' : 'accordion-icon'}/>
             </div>
             <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
                 {
