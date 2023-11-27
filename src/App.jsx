@@ -105,7 +105,12 @@ function App() {
         handleSaveNewEducation={handleSaveNewEducation}
         handleDeleteEducation={handleDeleteEducation}
       />
-      <Page details={personDetails}/>
+      <Page 
+        design={design}
+        details={personDetails}
+        education={education}
+        experience={experience}
+      />
     </div>
   )
 }
