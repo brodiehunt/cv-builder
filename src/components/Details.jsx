@@ -3,13 +3,14 @@ import DetailsForm from './DetailsForm';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
-function Details() {
+function Details({formDetails, handleSaveDetails}) {
     const [isOpen, setIsOpen] = useState(false);
 
     function handleToggleOpen() {
-        console.log('working')
         setIsOpen(!isOpen);
     }
+
+
     return (
         <div className="personal-details item-container">
             <div className="header-container">
@@ -18,7 +19,7 @@ function Details() {
             </div>
             
                 <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
-                <DetailsForm />
+                <DetailsForm formDetails={formDetails} handleSaveDetails={handleSaveDetails}/>
                 </div>
             
             

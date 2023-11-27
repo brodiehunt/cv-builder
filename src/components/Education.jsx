@@ -5,11 +5,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function Education() {
     const [isOpen, setIsOpen] = useState(false);
-
+    const [formOpen, setFormOpen] = useState(false);
     function handleToggleOpen() {
-        console.log('working')
         setIsOpen(!isOpen);
-    }
+    };
+    function handleOpenForm() {
+        setFormOpen(!formOpen)
+    };
     return (
         <div className="eductation item-container">
             <div className="header-container">
@@ -18,7 +20,14 @@ function Education() {
             </div>
             
             <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
-                <EducationForm />
+                {
+                    formOpen ? 
+                    <EducationForm /> : 
+                    <div className="state-items">
+                        <button className="btn add-new">Add New</button>
+                    </div>
+                }
+                
             </div>
         
         </div>

@@ -5,11 +5,14 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function Experience() {
     const [isOpen, setIsOpen] = useState(false);
+    const [formOpen, setFormOpen] = useState(false);
 
     function handleToggleOpen() {
-        console.log('working')
         setIsOpen(!isOpen);
-    }   
+    }
+    function handleOpenForm() {
+        setFormOpen(!formOpen)
+    };
     return (
         <div className="experience item-container">
             <div className="header-container">
@@ -17,7 +20,13 @@ function Experience() {
                 <ExpandMoreIcon fontSize="large" onClick={handleToggleOpen} className={isOpen ? 'accordion-icon open' : 'accordion-icon'}/>
             </div>
             <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
-                <ExperienceForm />
+                {
+                    formOpen ? 
+                    <ExperienceForm /> : 
+                    <div className="state-items">
+                        <button className="btn add-new">Add New</button>
+                    </div>
+                }
             </div>
             
             

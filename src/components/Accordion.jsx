@@ -4,11 +4,11 @@ import Design from './Design';
 import Details from './Details';
 import Education from './Education';
 import Experience from './Experience';
-function Accordion() {
+function Accordion(props) {
     return (
         <div className="accordion" >
             <Design />
-            <Details />
+            <Details formDetails={props.formDetails} handleSaveDetails={props.handleSaveDetails}/>
             <Education />
             <Experience />
         </div>

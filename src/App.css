@@ -41,6 +41,11 @@
   /* border: 2px solid var(--ds-border-focused);   */
 }
 
+.btn.add-new {
+  display: block;
+  margin: 0 auto;
+}
+
 /* COMMON ACCORDION STYLES */
 
 .accordion {
@@ -95,8 +100,75 @@
   color: var(--ds-text);
 }
 
-/* DE */
+/* DESIGN ACCORDION COMPONENT */
+.design-group {
+  margin-bottom: 1.5rem;
+}
 
+.design-group h3 {
+  margin-bottom: 1rem;
+}
+.design-btns-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Template btns */
+.template-btn {
+  width: 100px;
+  cursor: pointer;
+}
+
+.template-btn.selected {
+  outline: 2px solid var(--ds-border-selected)
+}
+.template-btn img {
+  max-width: 100px;
+}
+
+/* Theme btns */
+
+.theme-btn {
+  padding: 0;
+  width: 80px;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: none;
+  border-radius: 10px;
+}
+
+.theme-btn.selected {
+  outline: 2px solid var(--ds-border-selected)
+}
+
+.theme-btn span {
+  width: 100%;
+  height: 100%;
+}
+
+span.first {
+  border-radius: 10px 0 0 10px;
+}
+
+span.second {
+  border-radius: 0 10px 10px 0;
+}
+
+/* FONT BUTTONS */
+.font-btn {
+  padding: 1rem;
+  cursor: pointer;
+  color: var(--ds-text);
+  font-size: 1.5rem;
+  background: inherit;
+  border-radius: 5px;
+  border: 1px solid var(--ds-border-input)
+}
+
+.font-btn.selected {
+  outline: 2px solid var(--ds-border-selected);
+}
 
 @media only screen and (min-width: 1024px) {
   .main-container {

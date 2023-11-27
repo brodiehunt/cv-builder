@@ -1,7 +1,7 @@
-function FormGroup({className, name, type, placeholder, value, id, label}) {
+function FormGroup({className, name, type, placeholder, value, id, label, handleOnChange}) {
 
     const element = ( <input className={className} name={name} type={type}
-            placeholder={placeholder} id={id}></input> )
+            placeholder={placeholder} id={id} value={value} onChange={handleOnChange}></input> )
         
 
     return (
