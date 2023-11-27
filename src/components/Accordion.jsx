@@ -22,7 +22,9 @@ function Accordion(props) {
     return (
         <div className="accordion" >
             <Design isOpen={openAccordion.design}
-            handleChangeAccordion={handleChangeAccordion}
+                handleDesignChange={props.handleDesignChange}
+                handleChangeAccordion={handleChangeAccordion}
+                designData={props.design}
             />
             <Details isOpen={openAccordion.details}
                 handleChangeAccordion={handleChangeAccordion}

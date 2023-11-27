@@ -6,7 +6,7 @@ import Page from './components/Page';
 import './App.css'
 
 function App() {
-  const [design, setDesign] = useState({layout: 'One', theme: 'One', typography: 'One'});
+  const [design, setDesign] = useState({layout: 'one', theme: 'one', typography: 'one'});
   const [personDetails, setPersonDetails] = useState({fullName: 'Hello', email: '', phone: '', address: ''});
   const [education, setEducation] = useState([]);
   const [experience, setExperience] = useState([]);
@@ -17,6 +17,12 @@ function App() {
     setPersonDetails({fullName: '', email: '', phone: '', address: ''})
     setEducation([]);
     setExperience([]);
+  }
+
+  function handleDesignChange(key, newVal) {
+    const newState = {...design};
+    newState[key] = newVal;
+    setDesign(newState);
   }
 
   // Save new personDetails form event handler
@@ -86,6 +92,8 @@ function App() {
         <button className="btn">Download</button>
       </div>
       <Accordion 
+        design={design}
+        handleDesignChange={handleDesignChange}
         formDetails={personDetails}
         handleSaveDetails={handleSaveDetails}
         experience={experience}
