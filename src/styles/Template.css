@@ -1,0 +1,178 @@
+.page-container {
+  background-color: inherit
+}
+
+.page {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 375px;
+    overflow-y: hidden;
+    aspect-ratio: 1 / 1.41;
+  }
+
+  .layoutOne .banner {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    background-color: lightgray;
+    margin-top: 1rem;
+  }
+
+  .layoutOne .banner h1 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .layoutOne .banner h1 span{
+    font-weight: 400;
+  }
+
+
+  .layoutOne .banner div {
+    letter-spacing: 0.4rem;
+    font-weight: 600;
+  }
+
+  .layoutOne .grid-container {
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto auto auto;
+    font-size: 0.5rem;
+  }
+
+  .layoutOne .grid-container > :nth-child(odd) {
+    border-right: 1px solid black;
+    padding-right: 0.6rem;
+  }
+
+  .layoutOne .grid-container > :nth-child(even) {
+    padding-left: 0.6rem;
+  }
+
+  .layoutOne .grid-container > * {
+    /* padding-top: 1rem; */
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.3rem;
+  }
+
+  .layoutOne .grid-container h2 {
+    letter-spacing: 0.1rem;
+    margin-top: 0.5rem;
+    text-transform:uppercase;
+  }
+
+  .layoutOne .grid-container .profile h2 {
+    margin-top: 0;
+  }
+
+  .layoutOne .info {
+    grid-column: 1 /2;
+    grid-row: 1/2;
+    /* padding-bottom: 0.2rem; */
+  }
+
+  .layoutOne .profile {
+    grid-column: 2 / 3;
+    grid-row: 1/2;
+  }
+  .layoutOne .skills {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    border-top: 1px solid black;
+
+  }
+  .layoutOne .experience {
+    grid-column: 2/3;
+    grid-row: 2/4;
+    border-top: 1px solid black;
+  }
+
+  .layoutOne .education {
+    grid-column: 1 / 2;
+    grid-row: 3/4;
+    border-top: 1px solid black;
+  }
+
+  .layoutOne .info > * {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0.1rem 0;
+    gap: 0.3rem;
+  }
+
+  .layoutOne .info > * .icon {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  /* Skills */
+  .layoutOne .skills ul {
+    margin-left: 0.5rem;
+  }
+
+  /* Experience */
+  .layoutOne .experience-item {
+    width: 100%;
+    position: relative;
+  }
+
+  .layoutOne .company {
+    font-weight: 600;
+    font-size: 0.6rem;
+  }
+
+  .layoutOne .role {
+    font-size: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .layoutOne .experience-item .date {
+    display: flex;
+    /* justify-content: flex-end; */
+    gap: 0.1rem;
+    font-size: 0.4rem;
+    position: absolute;
+    top: 2px;
+    right: 3px;
+  }
+
+  .layoutOne .description {
+    font-size: 0.4rem;
+    
+  }
+  /* Education */
+
+  .layoutOne .education-item {
+    width: 100%;
+  }
+  .layoutOne .university {
+    font-weight: 600;
+    font-size: 0.6rem;
+  }
+
+  .layoutOne .degree {
+    font-size: 0.5rem;
+  }
+
+  .layoutOne .date {
+    display: flex;
+    /* justify-content: flex-end; */
+    gap: 0.1rem;
+    font-size: 0.4rem;
+
+  }
+  
+
+  @media only screen and (min-width: 1024px) {
+    .page-container {
+        grid-row: 1 / 3;
+        grid-column: 2 / 3;
+      }
+  }

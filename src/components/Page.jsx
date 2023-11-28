@@ -2,6 +2,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import {useEffect, useRef} from 'react'
+import '../styles/Template.css';
 function Page({design, details, education, experience}) {
     const pageElementRef = useRef(null);
     const gridContainerRef = useRef(null);
@@ -34,23 +35,24 @@ function Page({design, details, education, experience}) {
 
     return (
         <div className="page-container" ref={gridContainerRef}>
-        {(design.layout == 'one') ? (
+        {(design.layout == 'layoutOne') ? (
             <div ref={pageElementRef} className={`page ${design.layout} ${design.theme} ${design.typography}`}>
                 <div className="banner">
-                    <h1>Brodie <br/> Hunt </h1>
+                    <h1><span>Brodie</span><br/> Hunt </h1>
                     <div>Fullstack Web Developer</div>
                 </div>
+                <div className="grid-container">
                     <div className="info">
                         <div className="phone">
-                            <PhoneIcon />
+                            <PhoneIcon className="icon"/>
                             <p>0401810414</p>
                         </div>
                         <div className="email">
-                            <EmailIcon />
+                            <EmailIcon className="icon" />
                             <p>brodiehunt7@gmail.com</p>
                         </div>
                         <div className="address">
-                            <LocationOnIcon />
+                            <LocationOnIcon className="icon" />
                             <p>Sydney, Australia</p>
                         </div>
                     </div>
@@ -63,6 +65,7 @@ function Page({design, details, education, experience}) {
                         </p>
                     </div>
                     <div className="skills">
+                        <h2>Skills</h2>
                         <ul className="skillsList">
                             <li>Boss</li>
                             <li>Boss</li>
@@ -70,26 +73,6 @@ function Page({design, details, education, experience}) {
                             <li>Boss</li>
                             <li>Boss</li>
                         </ul>
-                    </div>
-                    <div className="education">
-                        <h2>Education</h2>
-                        <div className="education-item">
-                            <div className="university">
-                                University of Sydney
-                            </div>
-                            <div className="degree">
-                                Bachelor of Computer Science
-                            </div>
-                            <div className="date">
-                                <div className="start">
-                                    08/2020
-                                </div>
-                                -
-                                <div className="end">
-                                    08/2020
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div className="experience">
                         <h2>Experience</h2>
@@ -115,12 +98,111 @@ function Page({design, details, education, experience}) {
                                 voluptatem, perspiciatis quo neque repudiandae nemo. Fugit.
                             </div>
                         </div>
+                        <div className="experience-item">
+                            <div className="company">
+                                Atlassian
+                            </div>
+                            <div className="role">
+                                Junior Front-end Engineer
+                            </div>
+                            <div className="date">
+                                <div className="start">
+                                    08/2020
+                                </div>
+                                -
+                                <div className="end">
+                                    08/2020
+                                </div>
+                            </div>
+                            <div className="description">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod asperiores 
+                                provident voluptatibus tempore repudiandae earum accusamus. Quis doloribus 
+                                voluptatem, perspiciatis quo neque repudiandae nemo. Fugit.
+                            </div>
+                        </div>
+                        <div className="experience-item">
+                            <div className="company">
+                                Atlassian
+                            </div>
+                            <div className="role">
+                                Junior Front-end Engineer
+                            </div>
+                            <div className="date">
+                                <div className="start">
+                                    08/2020
+                                </div>
+                                -
+                                <div className="end">
+                                    08/2020
+                                </div>
+                            </div>
+                            <div className="description">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod asperiores 
+                                provident voluptatibus tempore repudiandae earum accusamus. Quis doloribus 
+                                voluptatem, perspiciatis quo neque repudiandae nemo. Fugit.
+                            </div>
+                        </div>
                     </div>
+                    <div className="education">
+                        <h2>Education</h2>
+                        <div className="education-item">
+                            <div className="university">
+                                University of Sydney
+                            </div>
+                            <div className="degree">
+                                Bachelor of Computer Science
+                            </div>
+                            <div className="date">
+                                <div className="start">
+                                    08/2020
+                                </div>
+                                -
+                                <div className="end">
+                                    08/2020
+                                </div>
+                            </div>
+                        </div>
+                        <div className="education-item">
+                            <div className="university">
+                                University of Sydney
+                            </div>
+                            <div className="degree">
+                                Bachelor of Computer Science
+                            </div>
+                            <div className="date">
+                                <div className="start">
+                                    08/2020
+                                </div>
+                                -
+                                <div className="end">
+                                    08/2020
+                                </div>
+                            </div>
+                        </div>
+                        <div className="education-item">
+                            <div className="university">
+                                University of Sydney
+                            </div>
+                            <div className="degree">
+                                Bachelor of Computer Science
+                            </div>
+                            <div className="date">
+                                <div className="start">
+                                    08/2020
+                                </div>
+                                -
+                                <div className="end">
+                                    08/2020
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
         : 
         (
-            <div className="page two">
+            <div className="page layoutTwo">
             </div>
         )}
         </div>

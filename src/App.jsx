@@ -6,14 +6,14 @@ import Page from './components/Page';
 import './App.css'
 
 function App() {
-  const [design, setDesign] = useState({layout: 'one', theme: 'one', typography: 'one'});
+  const [design, setDesign] = useState({layout: 'layoutOne', theme: 'themeOne', typography: 'typeOne'});
   const [personDetails, setPersonDetails] = useState({fullName: 'Hello', email: '', phone: '', address: ''});
   const [education, setEducation] = useState([]);
   const [experience, setExperience] = useState([]);
 
   // Clear entire application
   function clearResume() {
-    setDesign({layout: 'One', theme: 'One', typography: 'One'});
+    setDesign({layout: 'layoutOne', theme: 'themeOne', typography: 'typeOne'});
     setPersonDetails({fullName: '', email: '', phone: '', address: ''})
     setEducation([]);
     setExperience([]);

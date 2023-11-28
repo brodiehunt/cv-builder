@@ -16,14 +16,14 @@ function Design({isOpen, handleChangeAccordion, designData, handleDesignChange})
                     <h3>Layout</h3>
                     <div className="design-btns-group">
                         <button 
-                            onClick={() => handleDesignChange('layout', 'one' )}
-                            className={`template-btn ${designData.layout === 'one' ? 'selected' : ''}`}
+                            onClick={() => handleDesignChange('layout', 'layoutOne' )}
+                            className={`template-btn ${designData.layout === 'layoutOne' ? 'selected' : ''}`}
                         >
                             <img src={template1}/>
                         </button>
                         <button 
-                        onClick={() => handleDesignChange('layout', 'two' )}
-                        className={`template-btn ${designData.layout === 'one' ? '' : 'selected'}`}>
+                        onClick={() => handleDesignChange('layout', 'layoutTwo' )}
+                        className={`template-btn ${designData.layout === 'layoutOne' ? '' : 'selected'}`}>
                             <img src={template2}/>
                         </button>
                     </div>
@@ -32,22 +32,22 @@ function Design({isOpen, handleChangeAccordion, designData, handleDesignChange})
                     <h3>Theme</h3>
                     <div className="design-btns-group">
                         <button 
-                            onClick={() => handleDesignChange('theme', 'one' )}
-                            className={`theme-btn first ${designData.theme === 'one' ? 'selected' : ''}`}
+                            onClick={() => handleDesignChange('theme', 'themeOne' )}
+                            className={`theme-btn first ${designData.theme === 'themeOne' ? 'selected' : ''}`}
                         >
                             <span className="first" style={{backgroundColor: "blue"}}></span>
                             <span className="second" style={{backgroundColor: "red"}}></span>
                         </button>
                         <button 
-                            onClick={() => handleDesignChange('theme', 'two' )}
-                            className={`theme-btn second ${designData.theme === 'two' ? 'selected' : ''}`}
+                            onClick={() => handleDesignChange('theme', 'themeTwo' )}
+                            className={`theme-btn second ${designData.theme === 'themeTwo' ? 'selected' : ''}`}
                         >
                             <span className="first" style={{backgroundColor: "blue"}}></span>
                             <span className="second" style={{backgroundColor: "red"}}></span>
                         </button>
                         <button 
-                            onClick={() => handleDesignChange('theme', 'three' )}
-                            className={`theme-btn third ${designData.theme === 'three' ? 'selected' : ''}`}
+                            onClick={() => handleDesignChange('theme', 'themeThree' )}
+                            className={`theme-btn third ${designData.theme === 'themeThree' ? 'selected' : ''}`}
                         >
                             <span className="first" style={{backgroundColor: "blue"}}></span>
                             <span className="second" style={{backgroundColor: "red"}}></span>
@@ -58,16 +58,16 @@ function Design({isOpen, handleChangeAccordion, designData, handleDesignChange})
                     <h3>Typography</h3>
                     <div className="design-btns-group">
                         <button 
-                            onClick={() => handleDesignChange('typography', 'one' )}
-                            className={`font-btn ${designData.typography === 'one' ? 'selected' : ''}`}
+                            onClick={() => handleDesignChange('typography', 'typeOne' )}
+                            className={`font-btn ${designData.typography === 'typeOne' ? 'selected' : ''}`}
                         >Ss</button>
                         <button 
-                            onClick={() => handleDesignChange('typography', 'two' )}
-                            className={`font-btn ${designData.typography === 'two' ? 'selected' : ''}`}
+                            onClick={() => handleDesignChange('typography', 'typeTwo' )}
+                            className={`font-btn ${designData.typography === 'typeTwo' ? 'selected' : ''}`}
                         >Ss</button>
                         <button 
-                            onClick={() => handleDesignChange('typography', 'three' )}
-                            className={`font-btn ${designData.typography === 'three' ? 'selected' : ''}`}
+                            onClick={() => handleDesignChange('typography', 'typeThree' )}
+                            className={`font-btn ${designData.typography === 'typeThree' ? 'selected' : ''}`}
                         >Ss</button>
                     </div>
                 </div>
