@@ -1,5 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+
 .page-container {
   background-color: inherit
+}
+
+.page.typeOne {
+  font-family: 'Outfit', sans-serif;
+}
+
+.page.typeTwo {
+  font-family: 'Roboto', sans-serif;
+}
+
+.page.typeThree {
+  font-family:'Times New Roman', Times, serif
 }
 
 .page {
