@@ -29,7 +29,7 @@ function Education({educationData, handleSaveNewEducation, handleUpdateEducation
     const educationDivs = educationData.map((item) => {
         return (
             <div className="existing-object-tab" key={item.id} onClick={() => handleUpdateFormOpen(item)}>
-                <p>{item.degree}</p>
+                <p>{item.degree || item.school}</p>
                 <DeleteOutlineIcon className="delete-icon" onClick={(event) => {
                     event.stopPropagation();
                     handleDeleteEducation(item)}}/>

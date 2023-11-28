@@ -7,7 +7,7 @@ function Page({design, details, education, experience}) {
     const pageElementRef = useRef(null);
     const gridContainerRef = useRef(null);
     const fixedPageWidth = 375;
-
+    const [firstName, lastName] = details.fullName.split(' ');
     useEffect(() => {
         const scaleElement = () => {
             const gridContainer = gridContainerRef.current;
@@ -33,35 +33,79 @@ function Page({design, details, education, experience}) {
         };
     }, []);
 
+    const educationItems = education.map((item) => {
+        return (
+            <div className="education-item" key={item.id}>
+                <div className="university">
+                    {item.school}
+                </div>
+                <div className="degree">
+                    {item.degree}
+                </div>
+                <div className="date">
+                    <div className="start">
+                        {item.start}
+                    </div>
+                    -
+                    <div className="end">
+                        {item.end}
+                    </div>
+                </div>
+            </div>
+        )
+    })
+    const experienceItems = experience.map((item) => {
+        return (
+            <div className="experience-item" key={item.id}>
+                <div className="company">
+                    {item.companyName}
+                </div>
+                <div className="role">
+                    {item.positionTitle}
+                </div>
+                <div className="date">
+                    <div className="start">
+                        {item.start}
+                    </div>
+                    -
+                    <div className="end">
+                        {item.end}
+                    </div>
+                </div>
+                <div className="description">
+                    {item.description}
+                </div>
+            </div>
+        )
+    })
+
     return (
         <div className="page-container" ref={gridContainerRef}>
         {(design.layout == 'layoutOne') ? (
             <div ref={pageElementRef} className={`page ${design.layout} ${design.theme} ${design.typography}`}>
                 <div className="banner">
-                    <h1><span>Brodie</span><br/> Hunt </h1>
+                    <h1><span>{firstName}</span><br/> {lastName} </h1>
                     <div>Fullstack Web Developer</div>
                 </div>
                 <div className="grid-container">
                     <div className="info">
                         <div className="phone">
                             <PhoneIcon className="icon"/>
-                            <p>0401810414</p>
+                            <p>{details.phone}</p>
                         </div>
                         <div className="email">
                             <EmailIcon className="icon" />
-                            <p>brodiehunt7@gmail.com</p>
+                            <p>{details.email}</p>
                         </div>
                         <div className="address">
                             <LocationOnIcon className="icon" />
-                            <p>Sydney, Australia</p>
+                            <p>{details.address}</p>
                         </div>
                     </div>
                     <div className="profile">
                         <h2>Profile</h2>
                         <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi molestias, 
-                            fugiat vero nemo quae obcaecati, pariatur velit impedit dolore commodi recusandae 
-                            harum natus provident delectus.
+                            {details.profile}
                         </p>
                     </div>
                     <div className="skills">
@@ -76,126 +120,11 @@ function Page({design, details, education, experience}) {
                     </div>
                     <div className="experience">
                         <h2>Experience</h2>
-                        <div className="experience-item">
-                            <div className="company">
-                                Atlassian
-                            </div>
-                            <div className="role">
-                                Junior Front-end Engineer
-                            </div>
-                            <div className="date">
-                                <div className="start">
-                                    08/2020
-                                </div>
-                                -
-                                <div className="end">
-                                    08/2020
-                                </div>
-                            </div>
-                            <div className="description">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod asperiores 
-                                provident voluptatibus tempore repudiandae earum accusamus. Quis doloribus 
-                                voluptatem, perspiciatis quo neque repudiandae nemo. Fugit.
-                            </div>
-                        </div>
-                        <div className="experience-item">
-                            <div className="company">
-                                Atlassian
-                            </div>
-                            <div className="role">
-                                Junior Front-end Engineer
-                            </div>
-                            <div className="date">
-                                <div className="start">
-                                    08/2020
-                                </div>
-                                -
-                                <div className="end">
-                                    08/2020
-                                </div>
-                            </div>
-                            <div className="description">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod asperiores 
-                                provident voluptatibus tempore repudiandae earum accusamus. Quis doloribus 
-                                voluptatem, perspiciatis quo neque repudiandae nemo. Fugit.
-                            </div>
-                        </div>
-                        <div className="experience-item">
-                            <div className="company">
-                                Atlassian
-                            </div>
-                            <div className="role">
-                                Junior Front-end Engineer
-                            </div>
-                            <div className="date">
-                                <div className="start">
-                                    08/2020
-                                </div>
-                                -
-                                <div className="end">
-                                    08/2020
-                                </div>
-                            </div>
-                            <div className="description">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod asperiores 
-                                provident voluptatibus tempore repudiandae earum accusamus. Quis doloribus 
-                                voluptatem, perspiciatis quo neque repudiandae nemo. Fugit.
-                            </div>
-                        </div>
+                        {experienceItems}
                     </div>
                     <div className="education">
                         <h2>Education</h2>
-                        <div className="education-item">
-                            <div className="university">
-                                University of Sydney
-                            </div>
-                            <div className="degree">
-                                Bachelor of Computer Science
-                            </div>
-                            <div className="date">
-                                <div className="start">
-                                    08/2020
-                                </div>
-                                -
-                                <div className="end">
-                                    08/2020
-                                </div>
-                            </div>
-                        </div>
-                        <div className="education-item">
-                            <div className="university">
-                                University of Sydney
-                            </div>
-                            <div className="degree">
-                                Bachelor of Computer Science
-                            </div>
-                            <div className="date">
-                                <div className="start">
-                                    08/2020
-                                </div>
-                                -
-                                <div className="end">
-                                    08/2020
-                                </div>
-                            </div>
-                        </div>
-                        <div className="education-item">
-                            <div className="university">
-                                University of Sydney
-                            </div>
-                            <div className="degree">
-                                Bachelor of Computer Science
-                            </div>
-                            <div className="date">
-                                <div className="start">
-                                    08/2020
-                                </div>
-                                -
-                                <div className="end">
-                                    08/2020
-                                </div>
-                            </div>
-                        </div>
+                        {educationItems}
                     </div>
                 </div>
             </div>

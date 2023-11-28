@@ -1,7 +1,9 @@
-function FormGroup({className, name, type, placeholder, value, id, label, handleOnChange}) {
+function FormGroup({className, name, type, placeholder, value, id, label, handleOnChange, textarea}) {
 
-    const element = ( <input className={className} name={name} type={type}
-            placeholder={placeholder} id={id} value={value} onChange={handleOnChange}></input> )
+    const element = ( textarea ? <textarea className={className} name={name} type={type} 
+        placeholder={placeholder} id={id} value={value} onChange={handleOnChange} rows={4} ></textarea>  
+    :   <input className={className} name={name} type={type}
+        placeholder={placeholder} id={id} value={value} onChange={handleOnChange}></input> )
         
 
     return (

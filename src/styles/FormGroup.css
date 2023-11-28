@@ -29,3 +29,11 @@ form .form-btns-container {
     border: 1px solid var(--ds-border-input);
     border-radius: 5px;
 }
+
+.form-group textarea {
+    padding: 0.7rem;
+    color: var(--ds-text);
+    background-color: var(--ds-background-input);
+    border: 1px solid var(--ds-border-input);
+    border-radius: 5px;
+}

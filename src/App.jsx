@@ -7,14 +7,14 @@ import './App.css'
 
 function App() {
   const [design, setDesign] = useState({layout: 'layoutOne', theme: 'themeOne', typography: 'typeOne'});
-  const [personDetails, setPersonDetails] = useState({fullName: 'Hello', email: '', phone: '', address: ''});
+  const [personDetails, setPersonDetails] = useState({fullName: '', email: '', phone: '', address: '', profile: ''});
   const [education, setEducation] = useState([]);
   const [experience, setExperience] = useState([]);
 
   // Clear entire application
   function clearResume() {
     setDesign({layout: 'layoutOne', theme: 'themeOne', typography: 'typeOne'});
-    setPersonDetails({fullName: '', email: '', phone: '', address: ''})
+    setPersonDetails({fullName: '', email: '', phone: '', address: '', profile: ''})
     setEducation([]);
     setExperience([]);
   }

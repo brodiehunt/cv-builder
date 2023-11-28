@@ -45,7 +45,7 @@ function ExperienceForm({formDetails, saveCallback, handleToggleForm}) {
             value={formState.location} id="location" placeholder="" label="Location"
             handleOnChange={handleOnChange}
             />
-            <FormGroup className="input" name="description" type="text"
+            <FormGroup className="input" textarea={true} name="description" type="text"
             value={formState.description} id="description" placeholder="" label="Description"
             handleOnChange={handleOnChange}
             />

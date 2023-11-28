@@ -8,7 +8,7 @@ function DetailsForm({formDetails, handleSaveDetails}) {
     function handleClearForm(event) {
         console.log('setting state');
         event.preventDefault();
-        setFormState({fullName: "", email: "", phone: "", address: ""});
+        setFormState({fullName: "", email: "", phone: "", address: "", profile: ""});
     }
 
     function handleOnChange(event) {
@@ -33,6 +33,10 @@ function DetailsForm({formDetails, handleSaveDetails}) {
             />
             <FormGroup className="input" name="address" type="text"
             value={formState.address} id="address" placeholder="City, Country" label="Address"
+            handleOnChange={handleOnChange}
+            />
+            <FormGroup className="input" textarea={true} name="profile" type="text"
+            value={formState.profile} id="profile" placeholder="Intro about you" label="Profile"
             handleOnChange={handleOnChange}
             />
             <div className='form-btns-container'>
