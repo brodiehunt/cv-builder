@@ -92,6 +92,7 @@
 
 .accordion-content.open {
   max-height: 500px;
+  overflow-y: scroll;
 }
 
 .accordion-content .existing-object-tab {
