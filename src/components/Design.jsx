@@ -35,22 +35,22 @@ function Design({isOpen, handleChangeAccordion, designData, handleDesignChange})
                             onClick={() => handleDesignChange('theme', 'themeOne' )}
                             className={`theme-btn first ${designData.theme === 'themeOne' ? 'selected' : ''}`}
                         >
-                            <span className="first" style={{backgroundColor: "blue"}}></span>
-                            <span className="second" style={{backgroundColor: "red"}}></span>
+                            <span className="first" style={{backgroundColor: "#303072"}}></span>
+                            <span className="second" style={{backgroundColor: "#808080"}}></span>
                         </button>
                         <button 
                             onClick={() => handleDesignChange('theme', 'themeTwo' )}
                             className={`theme-btn second ${designData.theme === 'themeTwo' ? 'selected' : ''}`}
                         >
-                            <span className="first" style={{backgroundColor: "blue"}}></span>
-                            <span className="second" style={{backgroundColor: "red"}}></span>
+                            <span className="first" style={{backgroundColor: "#333333"}}></span>
+                            <span className="second" style={{backgroundColor: "#008080"}}></span>
                         </button>
                         <button 
                             onClick={() => handleDesignChange('theme', 'themeThree' )}
                             className={`theme-btn third ${designData.theme === 'themeThree' ? 'selected' : ''}`}
                         >
-                            <span className="first" style={{backgroundColor: "blue"}}></span>
-                            <span className="second" style={{backgroundColor: "red"}}></span>
+                            <span className="first" style={{backgroundColor: "#FFF9C4"}}></span>
+                            <span className="second" style={{backgroundColor: "#333333"}}></span>
                         </button>
                     </div>
                 </div>

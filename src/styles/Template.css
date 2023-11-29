@@ -6,6 +6,36 @@
   background-color: inherit
 }
 
+/* Different color themes */
+
+.page.themeOne {
+  --headings: #303072;
+  --text: #808080;
+  --bannerBackground: #dddddd;
+  --icon: rgb(0, 0, 128);
+  
+}
+
+.page.themeTwo {
+  --headings: #333333;
+  --text: #333333;
+  --bannerBackground: #B0E0E6;
+  --icon: #008080;
+}
+
+.page.themeThree {
+  --headings: #333333;
+  --text: #D3D3D3;
+  --bannerBackground: #FFF9C4;
+  --icon: #FFD700;
+}
+
+.page h1,
+.page h2,
+.page h3 {
+  color: var(--headings);
+}
+/* Different types */
 .page.typeOne {
   font-family: 'Outfit', sans-serif;
 }
@@ -25,12 +55,13 @@
     overflow-y: hidden;
     aspect-ratio: 1 / 1.41;
   }
+  
 
   .layoutOne .banner {
     display: flex;
     flex-direction: column;
     padding: 0.5rem 1rem;
-    background-color: lightgray;
+    background-color: var(--bannerBackground);
     margin-top: 1rem;
   }
 
@@ -47,6 +78,7 @@
   .layoutOne .banner div {
     letter-spacing: 0.4rem;
     font-weight: 600;
+    color: var(--headings);
   }
 
   .layoutOne .grid-container {
@@ -56,6 +88,7 @@
     grid-template-columns: 2fr 3fr;
     grid-template-rows: auto auto auto;
     font-size: 0.5rem;
+    height: 400px;
   }
 
   .layoutOne .grid-container > :nth-child(odd) {
@@ -126,6 +159,7 @@
   .layoutOne .info > * .icon {
     width: 0.8rem;
     height: 0.8rem;
+    color: var(--icon);
   }
 
   /* Skills */
