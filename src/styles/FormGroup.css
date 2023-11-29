@@ -1,3 +1,15 @@
+form.skill-form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+form.skill-form label {
+    display: none;
+}
+form.skill-form .form-group {
+    flex-grow: 1;
+    margin: 0;
+}
 
 form .col {
     display: grid;

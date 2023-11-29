@@ -2,10 +2,11 @@ import {useState} from 'react';
 
 import Design from './Design';
 import Details from './Details';
+import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
 function Accordion(props) {
-    const [openAccordion, setOpenAccordion] = useState({design: true, details: false, education: false, experience: false});
+    const [openAccordion, setOpenAccordion] = useState({design: true, details: false, skills: false, education: false, experience: false});
 
     function handleChangeAccordion(isOpen, stateKey) {
         const newState = {...openAccordion};
@@ -30,6 +31,12 @@ function Accordion(props) {
                 handleChangeAccordion={handleChangeAccordion}
                 formDetails={props.formDetails} 
                 handleSaveDetails={props.handleSaveDetails}
+            />
+            <Skills isOpen={openAccordion.skills} 
+                handleChangeAccordion={handleChangeAccordion}
+                skillsData={props.skills}
+                handleSaveNewSkill={props.handleSaveNewSkill}
+                handleDeleteSkill={props.handleDeleteSkill}
             />
             <Education isOpen={openAccordion.education}
                 handleChangeAccordion={handleChangeAccordion}

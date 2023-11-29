@@ -8,6 +8,7 @@ import './App.css'
 function App() {
   const [design, setDesign] = useState({layout: 'layoutOne', theme: 'themeOne', typography: 'typeOne'});
   const [personDetails, setPersonDetails] = useState({fullName: '', email: '', phone: '', address: '', profile: ''});
+  const [skills, setSkills] = useState([]);
   const [education, setEducation] = useState([]);
   const [experience, setExperience] = useState([]);
 
@@ -15,6 +16,7 @@ function App() {
   function clearResume() {
     setDesign({layout: 'layoutOne', theme: 'themeOne', typography: 'typeOne'});
     setPersonDetails({fullName: '', email: '', phone: '', address: '', profile: ''})
+    setSkills([]);
     setEducation([]);
     setExperience([]);
   }
@@ -30,6 +32,20 @@ function App() {
     event.preventDefault();
     
     setPersonDetails(details);
+  }
+
+  function handleSaveNewSkill(event, data) {
+    event.preventDefault();
+    const id = uuidv4();
+    data.id = id;
+    const newState = skills.slice();
+    newState.push(data);
+    setSkills(newState);
+  }
+
+  function handleDeleteSkill(data) {
+    const otherItems = skills.filter((item) => item.id !== data.id);
+    setSkills(otherItems);
   }
 
   // New experience save - adds a completely new object
@@ -96,6 +112,9 @@ function App() {
         handleDesignChange={handleDesignChange}
         formDetails={personDetails}
         handleSaveDetails={handleSaveDetails}
+        skills={skills}
+        handleSaveNewSkill={handleSaveNewSkill}
+        handleDeleteSkill={handleDeleteSkill}
         experience={experience}
         handleUpdateExperience={handleUpdateExperience}
         handleSaveNewExperience={handleSaveNewExperience}
@@ -108,6 +127,7 @@ function App() {
       <Page 
         design={design}
         details={personDetails}
+        skills={skills}
         education={education}
         experience={experience}
       />

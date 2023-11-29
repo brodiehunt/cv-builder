@@ -4,7 +4,6 @@ import template1 from '../assets/template1.jpeg';
 import template2 from '../assets/template2.jpeg';
 
 function Design({isOpen, handleChangeAccordion, designData, handleDesignChange}) {
-    console.log(designData);
     return (
         <div className="design item-container">
             <div className="header-container">

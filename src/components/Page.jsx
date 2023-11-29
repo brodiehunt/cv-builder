@@ -3,7 +3,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import {useEffect, useRef} from 'react'
 import '../styles/Template.css';
-function Page({design, details, education, experience}) {
+function Page({design, details, skills, education, experience}) {
     const pageElementRef = useRef(null);
     const gridContainerRef = useRef(null);
     const fixedPageWidth = 375;
@@ -111,11 +111,13 @@ function Page({design, details, education, experience}) {
                     <div className="skills">
                         <h2>Skills</h2>
                         <ul className="skillsList">
-                            <li>Boss</li>
-                            <li>Boss</li>
-                            <li>Boss</li>
-                            <li>Boss</li>
-                            <li>Boss</li>
+                            {skills.map((skill) => {
+                                return (
+                                    <li key={skill.id}>
+                                        {skill.skill}
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </div>
                     <div className="experience">
